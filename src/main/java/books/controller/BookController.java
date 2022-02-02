@@ -5,11 +5,11 @@ import books.dto.response.BookResponseDto;
 import books.dto.response.BookSuccessfulRateResponseDto;
 import books.model.Book;
 import books.service.BookService;
-import books.service.mapper.BookMapper;
-import books.service.mapper.BookRateMapper;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
+import books.service.mapper.BookRateReMapper;
+import books.service.mapper.BookReMapper;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,11 +24,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/books")
 public class BookController {
     private final BookService service;
-    private final BookMapper mapper;
-    private final BookRateMapper bookRateMapper;
+    private final BookReMapper mapper;
+    private final BookRateReMapper bookRateMapper;
 
-    public BookController(BookService service, BookMapper mapper,
-                          BookRateMapper bookRateMapper) {
+    public BookController(BookService service,
+                          BookReMapper mapper,
+                          BookRateReMapper bookRateMapper) {
         this.service = service;
         this.mapper = mapper;
         this.bookRateMapper = bookRateMapper;
