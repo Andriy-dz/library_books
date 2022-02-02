@@ -2,6 +2,7 @@ package books.service.impl;
 
 import books.dao.AuthorDao;
 import books.model.Author;
+import books.projection.AuthorProjection;
 import books.service.AuthorService;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public List<List<Object>> getMostSuccess() {
+    public List<AuthorProjection> getMostSuccess() {
         return authorDao.maxSuccess();
     }
 

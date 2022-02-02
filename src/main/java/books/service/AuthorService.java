@@ -1,6 +1,7 @@
 package books.service;
 
 import books.model.Author;
+import books.projection.AuthorProjection;
 import java.util.List;
 
 public interface AuthorService {
@@ -8,7 +9,7 @@ public interface AuthorService {
 
     Author get(Long id);
 
-    List<List<Object>> getMostSuccess();
+    List<AuthorProjection> getMostSuccess();
 
     Author update(Author author);
 
